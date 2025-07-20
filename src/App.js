@@ -9,10 +9,10 @@ import Register from './Auth/Register';
 import NotificationDetailModal from './Components/NotificationDetailModal';
 import UserProfile from './Components/UserProfile';
 
-// Base URL for your backend API
-const API_BASE_URL = 'http://localhost:5000/api';
-// Base URL for your Socket.io server
-const SOCKET_SERVER_URL = 'http://localhost:5000';
+// Base URL for your backend API (reads from Vercel env var in production, defaults to localhost for local dev)
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000/api';
+// Base URL for your Socket.io server (reads from Vercel env var in production, defaults to localhost for local dev)
+const SOCKET_SERVER_URL = process.env.REACT_APP_SOCKET_SERVER_URL || 'http://localhost:5000';
 
 // Main App component
 const App = () => {
